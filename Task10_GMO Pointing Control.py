@@ -1,14 +1,3 @@
-"""
-ASEN 5010 - Task 10: GMO-Pointing Attitude Control
-
-Uses same K, P gains from Task 8.
-Reference frame Rc from Task 5:
-    r̂₁ = −Δr/|Δr|         (−r̂₁ points at GMO)
-    r̂₂ = (Δr × n̂₃)/|Δr × n̂₃|
-    r̂₃ = r̂₁ × r̂₂
-Angular velocity NωRc/N via numerical finite difference (Task 5).
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
