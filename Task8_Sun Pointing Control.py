@@ -1,37 +1,3 @@
-"""
-ASEN 5010 - Task 8: Sun-Pointing Attitude Control
-
-PD control law:  Bu = −K σ_B/R − P BωB/R
-
-Gain Design (linearized closed-loop)
--------------------------------------
-Linearized EOM per principal axis i:
-    Iᵢ σ̈ᵢ + P σ̇ᵢ + K σᵢ = 0
-
-    ωₙᵢ  = √(K/Iᵢ)
-    ξᵢ   = P / (2√(K Iᵢ))
-    τᵢ   = 1/(ξᵢ ωₙᵢ) = 2Iᵢ/P
-
-Constraints:
-  (1) τ_max ≤ 120 s  →  2·I_max/P ≤ 120  →  P ≥ 2·10/120 = 1/6 Nm·s
-      Choose P = 1/6 (tightest bound, gives τ₁ = 120 s exactly)
-
-  (2) All axes under-damped or critically damped: ξᵢ ≤ 1 for all i
-      ξᵢ is maximised when Iᵢ is minimised (I_min = 5 kg·m²)
-      ξ_max = P/(2√(K·I_min)) ≤ 1  →  K ≥ P²/(4·I_min)
-      Choose K = P²/(4·I_min) → axis 2 (I=5) critically damped,
-                                  axes 1,3 under-damped ✓
-
-Result:
-    P = 1/6  ≈ 0.16667  N·m·s
-    K = 1/720 ≈ 0.001389  N·m
-
-Axis-by-axis modal response:
-    I=10: ωₙ=0.01178 rad/s, ξ=0.7071, τ=120.0 s  (under-damped)
-    I= 5: ωₙ=0.01667 rad/s, ξ=1.0000, τ= 60.0 s  (critically damped)
-    I=7.5: ωₙ=0.01361 rad/s, ξ=0.8165, τ= 90.0 s  (under-damped)
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
