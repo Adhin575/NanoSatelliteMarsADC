@@ -184,19 +184,16 @@ Hold u piecewise-constant across the entire RK4 sub-step evaluations
 Advance the full state X = [σ, ω] with a single RK4 call
 Apply MRP shadow switching (|σ| > 1 → σ* = −σ/|σ|²) after the full step — never during
 
-pythonk1 = eom(Xn,         u)
+pythonk1 = eom(Xn, u)
 k2 = eom(Xn + k1/2,  u)
 k3 = eom(Xn + k2/2,  u)
 k4 = eom(Xn + k3,    u)
 Xn+1 = Xn + (dt/6)(k1 + 2k2 + 2k3 + k4)
 if |sigma| > 1: sigma = -sigma / |sigma|²
 
-Troubleshooting
-SymptomFixNo module named mpl_toolkitsRun pip install --upgrade matplotlibAnimation window opens then freezesSet MPLBACKEND=TkAgg before running, or conda install tk3D quiver arrows leave ghost trailsExpected — blit=False is required for 3D quiver removal in matplotlibResults differ from expectedVerify MRP shadow switch happens after each full RK4 step, not inside itPlots appear very small on HiDPI screenAdd matplotlib.rcParams["figure.dpi"] = 150 at the top of the scriptAnimation too fast / too slowAdjust interval= (ms per frame) or step= (sim seconds per frame)
+
 
 References
 
-Schaub, H. and Junkins, J.L. (2018). Analytical Mechanics of Space Systems, 4th ed. AIAA Education Series.
+Schaub, H. and Junkins, J.L. (2018). Analytical Mechanics of Space Systems, 4th ed. AIAA Education Series.\n
 Arya, V. (2024). ASEN 5010 Semester Project Specification — Attitude Dynamics and Control of a Nano-Satellite Orbiting Mars. University of Colorado Boulder.
-Shepperd, S.W. (1978). Quaternion from rotation matrix. Journal of Guidance and Control, 1(3), 223–224.
-Junkins, J.L. and Schaub, H. (1997). Orthogonal attitude parameterizations using modified Rodrigues parameters. AIAA Journal, 35(10), 1661–1664.
