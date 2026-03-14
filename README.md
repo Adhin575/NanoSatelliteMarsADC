@@ -195,5 +195,6 @@ if |sigma| > 1: sigma = -sigma / |sigma|²
 
 References
 
-Schaub, H. and Junkins, J.L. (2018). Analytical Mechanics of Space Systems, 4th ed. AIAA Education Series.\n
+Schaub, H. and Junkins, J.L. (2018). Analytical Mechanics of Space Systems, 4th ed. AIAA Education Series.
+
 Arya, V. (2024). ASEN 5010 Semester Project Specification — Attitude Dynamics and Control of a Nano-Satellite Orbiting Mars. University of Colorado Boulder.
