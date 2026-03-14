@@ -1,3 +1,14 @@
+"""
+ASEN 5010 - Task 11: Full Mission Scenario Simulation
+
+Mode switching logic (Table 1):
+  1. Sun-pointing   : LMO n̂₂ position > 0  (sunlit side)
+  2. GMO-pointing   : n̂₂ < 0  AND  angle(r_LMO, r_GMO) < 35°
+  3. Nadir-pointing : n̂₂ < 0  AND  angle(r_LMO, r_GMO) ≥ 35°
+
+Propagate 6500 s with dt = 1 s.
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
