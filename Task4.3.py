@@ -1,31 +1,3 @@
-"""
-ASEN 5010 - Task 3: Sun-Pointing Reference Frame Orientation
-
-Sun is in the n̂₂ direction (constant, infinite distance assumed).
-Goal: build Rs such that r̂₃ → sun (n̂₂), r̂₁ → −n̂₁
-
-Derivation
-----------
-Given:
-    r̂₁ = −n̂₁  →  [-1,  0,  0]ᴺ
-    r̂₃ =  n̂₂  →  [ 0,  1,  0]ᴺ
-
-Right-hand rule completes the frame:
-    r̂₂ = r̂₃ × r̂₁ = n̂₂ × (−n̂₁)
-        = −(n̂₂ × n̂₁)
-        = −(−n̂₃)
-        =  n̂₃        →  [ 0,  0,  1]ᴺ
-
-[RsN] rows = r̂₁, r̂₂, r̂₃  expressed in N-frame components:
-
-         ⎡ r̂₁ ⎤   ⎡ -1   0   0 ⎤
-[RsN] =  ⎢ r̂₂ ⎥ = ⎢  0   0   1 ⎥
-         ⎣ r̂₃ ⎦   ⎣  0   1   0 ⎦
-
-Because all axes are FIXED in the inertial frame, [RsN] is CONSTANT
-and the angular velocity  NωRs/N = 0.
-"""
-
 import numpy as np
 
 # ── Elementary rotations (reused from earlier tasks) ─────────────────
