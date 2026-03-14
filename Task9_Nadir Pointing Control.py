@@ -1,11 +1,3 @@
-"""
-ASEN 5010 - Task 9: Nadir-Pointing Attitude Control
-
-Uses same K, P gains from Task 8.
-Reference frame Rn from Task 4: [RnN] = diag(-1,1,-1) @ [HN](t)
-Angular velocity NωRn/N = θ̇ · î_h  (Task 4)
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
